@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <p></p>
+    <script>
+        // 要求：用户名必须是字母数字或者下划线且6-16位
+
+        // 代码实现
+        // 1。定义正则
+        let reg = /^[a-zA-Z0-9_]{6,16}$/;
+        // 2.获取输入框
+        let int = document.querySelector('input');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+        let p = document.querySelector('p');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+        // 3.给输入框注册失去焦点（blur）事件  
+        int.addEventListener('blur',function () {
+            let content = this.value;
+        // 对内容进行验证
+        if (reg.test(content)) {
+           p.innerHTML = '恭喜，用户名合法'
+           p.style.color = 'green'
+            console.log('恭喜，用户名合法')
+        }else{
+            p.innerHTML = '用户名必须是字母数字下划线且再6-16位'
+            p.style.color = 'red'
+
+            console.log('用户名必须是字母数字下划线且再6-16位');
+        }
+        })//绑定事件
+        
+    </script>
+</body>
+</html>
