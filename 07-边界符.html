@@ -17,13 +17,24 @@
 
         // 3.边界符使用过程中的表示的含义：
             // a)一个边界符
-            //表示的含义必须以abc开始
+                //表示的含义必须以abc开始
             // let reg = /^abc/;
-            // console.log(   reg.test('abc'));
-            let reg = /abc$/;
-            console.log(   reg.test('abc'));
-            // b)
+            // console.log(   reg.test('abcasdasd12323'));
+
+                // 表示的含义就是：必须以abc结束
+            // let reg = /abc$/;
+            // console.log(   reg.test('12312eweqeabc'));
+
+
+            // b)同时使用了两个边界符
+            // 表示精确匹配，字符串中只能是一个'abc'不能包含其他任何的值
+            let reg = /^abc$/;
+            console.log(reg.test('abc'));
+
+
             // c)
+
+            
     </script>
 </body>
 </html>
