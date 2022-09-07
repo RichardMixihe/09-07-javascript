@@ -30,13 +30,13 @@
         // 2.字符串替换
         // 本质：就是字符串中提供的一个方法
         // 语法：要被替换的字符串.replace(正则,'要替换为的值')
-
+        // 注意：替换字符串有返回值，返回的结果就是替换后的新字符串
         //代码演示
         let str = 'pink老师就是牛叉,老段也牛叉';
          
-        
+        let newstr = str.replace(/牛叉/g,'牛博一')
 
-        console.log(str.replace(/牛叉/g,'牛博一'));
+        console.log(newstr);
 
 
     </script>
