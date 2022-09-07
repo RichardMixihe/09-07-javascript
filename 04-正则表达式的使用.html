@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //正则使用：
+            // 1.定义规则（正则）
+            // let 正则变量 = /规则内容/；
+            // 注意：在定义正则的时候不能加引号！斜杠是： /
+
+            // 2.验证
+                // a)正则变量.test('要被验证的内容（字符串）')
+                // 返回的结果是一个布尔值：true代表通过（符合规则）
+                // 返回的结果是一个布尔值：false代表不通过（不符合规则）
+
+                // 注意事项： 必须把单词写对  正则变量.test()
+
+
+                // b)正则变量.exec('要被验证的内容（字符串）')
+                    // 返回的结果如果是一个数组，则表示通过（符合规则）
+                    // 返回的结果如果是nu11,代表不通过（不符合规则)
+
+            //代码演示
+                let reg = /abc/;
+                // // 验证
+                // console.log( reg.test('abc'));
+
+                console.log(reg.exec('abc'));
+    </script>
+</body>
+</html>
