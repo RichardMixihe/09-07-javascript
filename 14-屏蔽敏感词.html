@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <input type="button" value="按钮">
+    <div class="msg"></div>
+    <script>
+        // 分析：需要将用户输入的内容中的敏感词进行替换
+        let text = document.querySelector('textarea');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+        let btn = document.querySelector('input');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+        let div = document.querySelector('.msg');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+        btn. addEventListener('click',function () {
+            // a)获取用户输入的内容
+            let content = text.value;
+
+            // b)将内容进行敏感词替换
+            content = content.replace(/激情|渣男/g,'**')
+
+            //c)将替换后的结果显示到div标签中
+            div.innerHTML = content
+
+
+        })//绑定事件
+
+    </script>
+</body>
+</html>
