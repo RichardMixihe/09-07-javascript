@@ -22,12 +22,23 @@
             // 代码演示：全局匹配
             // 在正则表达式中程序按照从左向右的顺序依次进行匹配。
             //如果第一个没有匹配成功则继续向后查找匹配
-            let reg = /ab/g;
-            console.log(reg.exec('abab'));
-            console.log(reg.exec('abab'));
+            // let reg = /ab/g;
+            // console.log(reg.exec('abab'));
+            // console.log(reg.exec('abab'));
 
 
         // 2.字符串替换
+        // 本质：就是字符串中提供的一个方法
+        // 语法：要被替换的字符串.replace(正则,'要替换为的值')
+
+        //代码演示
+        let str = 'pink老师就是牛叉,老段也牛叉';
+         
+        
+
+        console.log(str.replace(/牛叉/g,'牛博一'));
+
+
     </script>
 </body>
 </html>
