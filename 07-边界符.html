@@ -12,8 +12,18 @@
         // ^ :开始
         // $ ：结束
 
-        // 边界符用法
-        let reg = /^正则内容$/
+        // 2.边界符用法
+        // let reg = /^正则内容$/
+
+        // 3.边界符使用过程中的表示的含义：
+            // a)一个边界符
+            //表示的含义必须以abc开始
+            // let reg = /^abc/;
+            // console.log(   reg.test('abc'));
+            let reg = /abc$/;
+            console.log(   reg.test('abc'));
+            // b)
+            // c)
     </script>
 </body>
 </html>
