@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        let int = document.querySelector('input');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+        // int. addEventListener('blur',function () {
+        //     console.log(123);
+        // })//绑定事件
+        // 只要内容发生改变就执行
+        int. addEventListener('change',function () {
+            console.log(123);
+        })//绑定事件
+    </script>
+</body>
+</html>
