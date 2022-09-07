@@ -9,7 +9,24 @@
 <body>
     <script>
         // 1.正则修饰符
-            
+            // i :忽略字母大小写
+            // g :正则全局匹配
+            // 修饰符用法：必须写在正则外部
+            // let reg = /a/i
+
+            // 代码演示：
+            // let reg = /^a$/i
+            // console.log(reg.test('A'));
+
+
+            // 代码演示：全局匹配
+            // 在正则表达式中程序按照从左向右的顺序依次进行匹配。
+            //如果第一个没有匹配成功则继续向后查找匹配
+            let reg = /ab/g;
+            console.log(reg.exec('abab'));
+            console.log(reg.exec('abab'));
+
+
         // 2.字符串替换
     </script>
 </body>
