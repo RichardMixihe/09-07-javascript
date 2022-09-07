@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.字符集
+        // [值值值]:只要是集合中的一个即可
+
+        // [值-值]:只要是集合中的一个即可,就是前面的一种简写
+
+        // 2.字符集使用
+        //当前字符串只能是abc中的一个
+        // let reg = /^[abc]$/;
+        // console.log(reg.test('a'));
+
+
+        let reg = /^[a-c]$/;
+        console.log(reg.test('a'));
+    </script>
+</body>
+</html>
