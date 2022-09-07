@@ -199,6 +199,8 @@
       </div>
     </div>
   </div>
+
+
   <script>
     // 1.当用户输入完成后，失去焦点（blur事件）进行对用户输入的内容验证
     // 2.如果验证失败，则在对应的标签位置显示失败的信息
@@ -211,13 +213,136 @@
     let username = document.querySelector('input[name = "username"]');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
     let username_msg = username.nextElementSibling;
 
-    username. addEventListener('change',function () {
+    username.addEventListener('change',function () {
       checkUserName();
-    })//绑定事件
+    });//绑定事件
     // 验证用户名函数封装
     function checkUserName() {
-      console.log(123);
+      //先获取用户输入的内容
+      let content = username.value;
+      //要对用户输入的内容进行验证，定义正则
+      let reg = /^\w{6,10}$/;
+      if (reg.test('content')==false) {
+        username_msg.innerHTML = '用户名输入不合法6-10位';
+        return false;
+      }
+        //将提示信息清空
+        username_msg.innerHTML = '';
+        return true;
     }
+      //功能2验证手机号
+    let phone = document.querySelector('input[name="phone"]');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+    let phone_msg = phone.nextElementSibling;
+    phone. addEventListener('change',function () {
+      checkPhone()
+    })//绑定事件
+    function checkPhone() {
+        let content = phone.value;
+        let reg = /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/;
+        if(reg.test(content == false)){
+          phone_msg.innerHTML='手机号码不正确';
+          return false
+        }
+        phone_msg.innerHTML = '';
+        return true;
+
+    }
+
+    //功能3：短信验证码
+    let code = document.querySelector('input[name="code"]');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+    let code_msg = code.nextElementSibling;
+    phone. addEventListener('change',function () {
+      checkCode()
+    })//绑定事件
+    function checkCode() {
+        let content = code.value;
+        let reg = /^\d{6}$/;
+        if(reg.test(content == false)){
+          code_mag.innerHTML='验证码不正确';
+          return false
+        }
+        code_msg.innerHTML = '';
+        return true;
+
+    }
+
+      // 功能4:发送验证码
+      let code_btn = document.querySelector('.code');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+      code_btn. addEventListener('click',function () {
+        //立即修改a标签的文字内容
+        this.innerHTML = '05秒后重新获取';
+        //定义一个变量维护倒计数
+        let i = 5;
+        //在定时器中让值递减
+       let timeId = setInterval(function () {
+          i--;
+          code_btn.innerHTML = `0${i}秒后重新获取`;
+          if (i<=0) {
+            clearInterval(timeId)
+          code_btn.innerHTML = `重新获取`;
+
+          }
+        },1000)
+      })//绑定事件
+
+      //功能5:密码验证
+      let password = document.querySelector('input[name="password"]');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+      let password_msg = code.nextElementSibling;
+      phone. addEventListener('change',function () {
+        checkCode()
+      })//绑定事件
+      function checkCode() {
+          let content = password.value;
+          let reg = /^\w{6,20}$/;
+          if(reg.test(content == false)){
+            password_msg.innerHTML='密码格式不正确';
+            return false
+          }
+          password_msg.innerHTML = '';
+          return true;
+
+      }
+      
+
+      //功能6:确认密码一致
+      let confirm_ = document.querySelector('input[name = "confirm"');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+      let confirm_msg = confirm_.nextElementSibling;
+      confirm_. addEventListener('change',function () {
+        checkConfirm()
+      })//绑定事件
+      function checkConfirm() {
+        let prev_value = password.value;
+        let content = confirm_.value;
+        if(prev_value != content){
+          confirm_msg.innerHTML  = '两次输入不一致';
+          return false
+        }
+        confirm_msg.innerHTML = ''
+        return true;
+      }
+
+      //功能7 点击同意协议
+      let icon_queren = document.querySelector('.icon-queren');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+      icon_queren. addEventListener('click',function () {
+        this.classList.toggle(icon-queren2);
+      })//绑定事件
+
+
+      //功能8点击下一步
+      let submit_btn = document.querySelector('.submit');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+      submit_btn.addEventListener('click',function(e){
+        //判断用户是否勾选同意协议，只要判断标签是否有icon-queren2类名
+          if (icon_queren.classList.contains('icon_queren2')== false) {
+            alert('请勾选同意协议')
+          } else {
+            checkUserName();
+          }
+
+        //阻止跳转
+        e.preventDefault();
+
+      })
+      
   </script>
 </body>
 
